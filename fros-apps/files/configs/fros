@@ -1,0 +1,11 @@
+config system system
+	option version '2.0.1'
+	option username 'admin'
+	option password 'admin'
+   
+config license 'register'
+	option deviceid ''
+	option license ''
+
+config device status
+	option wifi_init '0'
