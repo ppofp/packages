@@ -12,7 +12,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/fros
   SECTION:=Fros Apps
   CATEGORY:=Fros Apps
-  DEPENDS:=+libuci +libjson-c +libblobmsg-json +libubox +libubus 
+  DEPENDS:=+libuci +libjson-c +libblobmsg-json +libubox +libubus
   TITLE:=fros
 endef
 
@@ -80,6 +80,7 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/apid $(1)/usr/bin
 	$(INSTALL_BIN) ./files/apid.init $(1)/etc/init.d/apid_init
 	$(INSTALL_BIN) ./files/license.init $(1)/etc/init.d/license
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/licensed $(1)/usr/bin
 	$(INSTALL_BIN) ./files/qos.sh $(1)/etc/init.d/fros_qos
 	$(INSTALL_BIN) ./files/qos.hotplug $(1)/etc/hotplug.d/iface/51-qos
 
