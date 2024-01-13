@@ -12,6 +12,7 @@ service_triggers()
 }
 
 stop_service(){
+	killall oafd
 	killall -9 oafd
 	rmmod dpi_filter
 }
@@ -31,6 +32,8 @@ init_feature(){
 
 
 start_service(){
+	# 798x hnat
+	echo 0 >/sys/kernel/debug/hnat/hook_toggle
 	update_web_server_param
 	if [ ! -d /tmp/config ];then
 		mkdir /tmp/config

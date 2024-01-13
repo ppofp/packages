@@ -1,8 +1,8 @@
 
 config global 'global'
 	option enable '1'
-	option audit_enable '0'
-	option agree '0'
+	option audit_enable '1'
+	option agree '1'
 	option max_record_time '7'
 	option min_online_time '10'
 	option url_data_size '10'
@@ -10,7 +10,7 @@ config global 'global'
 	option url_audit_enable '0'
 
 config auto_upgrade 'auto_upgrade'
-	option enable '0'
+	option enable '1'
 	option weekday '0'
 	option update_time '3'
 
@@ -49,4 +49,3 @@ config rule
 	list appid '4011'
 	list appid '4012'
 	list appid '4006'
-

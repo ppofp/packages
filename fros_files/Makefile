@@ -42,6 +42,7 @@ define Package/$(PKG_NAME)/install
 	#$(INSTALL_DATA) ./files/etc/config/* $(1)/etc/config/
 	$(INSTALL_DATA) ./files/etc/version $(1)/etc/
 	$(INSTALL_DATA) ./files/etc/product_feature $(1)/etc/
+	$(INSTALL_DATA) ./files/etc/f_type $(1)/etc/
 endef
 
 

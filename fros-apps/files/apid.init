@@ -12,6 +12,13 @@ stop_service(){
 }
 
 start_service(){
+	#360T7 rps config
+	echo 1 > /sys/class/net/eth0/queues/rx-0/rps_cpus
+	echo 2 > /sys/class/net/ra0/queues/rx-0/rps_cpus
+	echo 2 > /sys/class/net/rax0/queues/rx-0/rps_cpus
+	#disable hnat 798x
+	echo 0 >/sys/kernel/debug/hnat/hook_toggle
+
 	procd_open_instance
 	procd_set_param respawn 60 5 5
 	procd_set_param stderr 1
